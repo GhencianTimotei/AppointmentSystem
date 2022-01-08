@@ -26,6 +26,8 @@ importChars = function () {
     var charts = firebase.database().ref('/charts/');
     ownedCharts.on('value', (snapshot) => {
         if (snapshot.exists()) {
+            var table = document.getElementsByClassName('charts_list')[0];
+            table.innerHTML = '';
             for (var key in snapshot.val()) {
                 addNewChartToTable(snapshot.val()[key]);
             }
@@ -34,7 +36,7 @@ importChars = function () {
 };
 
 addNewChartToTable = function (key) {
-    const table = document.getElementsByClassName('charts_list')[0];
+    var table = document.getElementsByClassName('charts_list')[0];
     var chart = firebase.database().ref('/charts/' + key);
     chart.on('value', (snapshot) => {
         console.log(snapshot.val()['title']);
@@ -148,7 +150,7 @@ addNewChart = function () {
     }
 
 
-    const data = { 'title': titleInput.value, 'schedule': [intervalMinInput.value, intervalMaxInput.value], 'bLoggedin': loggedinInput.checked, 'bConfirmation': withConfirmationInput.checked, 'fields': fields };
+    const data = { 'title': titleInput.value, 'schedule': [intervalMinInput.value, intervalMaxInput.value], 'bLoggedin': loggedinInput.checked, 'bConfirmation': withConfirmationInput.checked, 'fields': fields , 'creator': uid};
     console.log(data);
 
     key = firebase.database().ref('/charts/').push().key;

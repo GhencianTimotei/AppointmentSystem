@@ -77,6 +77,10 @@
   color: black;
 }
 
+.modal-content h2 {
+  color: black;
+}
+
 .popupBox button {
   background: white;
   margin: 10px;
@@ -95,6 +99,10 @@
   padding: 5px;
 }
 
+.modal-content label {
+  color: #000;
+}
+
 /* The Close Button */
 .popupBox .close {
   color: #aaa;
@@ -104,7 +112,7 @@
 }
 
 .popupBox .close:hover,
-.close:focus {
+.popupBox .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -459,6 +467,30 @@ font-size: 18px;
   height: 20px;
 }
 
+.chart .calendar_hours_occupied {
+  opacity: .7;
+  background-color: #e67011;
+}
+
+.chart .calendar_hours_confirmed {
+  opacity: .7;
+  background-color: #20be00;
+}
+
+.chart .calendar_hours_blocked {
+  opacity: .7;
+  background-color: #ff8292;
+}
+
+.chart .modal .button {
+  background: rgb(0, 255, 213);
+  margin: 10px;
+  padding: 10px 10px 10px 10px;
+  text-transform: uppercase;
+  font-family: archivo_blackregular;
+  cursor: pointer;
+}
+
 /* SIDEMENU */
 
 .menu_buttons {
@@ -503,6 +535,16 @@ font-size: 18px;
 
 .dropdown-menu_show {
   display: block!important;
+}
+
+.avatar_container .badge {
+  position: fixed;
+  padding: 0.1% 0.3%;
+  border-radius: 30%;
+  background: red;
+  color: white;
+  font-size: 15px;
+  transform: translate(-15px, -15px);
 }
 
 #menu_title {
@@ -557,4 +599,81 @@ hr {
   opacity: .25;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.search_bar {
+  display: none; /* Hidden by default */
+  position: absolute;
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.search_bar .search_bar-container {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.search_bar .search_bar-container input{
+  width: 98.5%;
+}
+
+.search_bar .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.search_bar .close:hover,
+.search_bar .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search_bar .notifications_box_unread {
+  background-color: darkred!important;
+  color: white;
+}
+
+.search_bar .notifications_box {
+  text-align: center;
+}
+
+.search_bar #notifications_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.search_bar #notifications_table td, #notifications_table th {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+.search_bar #notifications_table tr:nth-child(even){background-color: #f2f2f2;}
+
+.search_bar #notifications_table tr:hover {background-color: #ddd;}
+
+.search_bar #notifications_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: black;
+}
+
+.search_bar .notifications_box_unread {
+  background-color: darkred!important;
+  color: white;
 }
